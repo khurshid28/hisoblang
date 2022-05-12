@@ -11,14 +11,14 @@
 
 <body>
     <div id="container">
-        <h1>&bull; Hisoblang &bull;</h1>
+        <h1 style="font-size: 25px;">&bull; Hisoblang &bull;</h1>
         <div class="underline">
         </div>
 
         <form action="#" id="contact_form" onchange="hisoblash()">
 
             <div class="telephone2">
-                <input type="number" placeholder="Kitob Betlarining Sonini kiriting..." name="telephone"
+                <input type="number" placeholder="Betlarining Soni..." name="telephone"
                     id="telephone_input" onchange="hisoblash()" autocomplete="off" onclick="hisoblash()">
             </div>
 
@@ -26,19 +26,19 @@
 
                 <select  name="subject" id="subject_input" class="qogoz">
                     <!-- <option disabled hidden selected>Subject line</option> -->
-                    <option value="90">A5 - oq qora (90 so'm)</option>
-                    <option value="160">A4 - oq qora (160 so'm)</option>
-                    <option value="130">A5 - rangli (130 so'm)</option>
-                    <option value="200">A4 - rangli (200 so'm)</option>
+                    <option value="90">A5 - oq qora</option>
+                    <option value="160">A4 - oq qora</option>
+                    <option value="130">A5 - rangli</option>
+                    <option value="200">A4 - rangli</option>
                 </select>
             </div>
             <div class="subject">
 
                 <select name="subject" id="subject_input" class="jild">
-                    <option value="5000">Oddiy Pereplyot (5.000 so'm)</option>
-                    <option value="10000">Temir pereplyot (10.000 so'm)</option>
-                    <option value="10000">Termokley (10.000 so'm)</option>
-                    <option value="30000">Qattiq muqova (30.000 so'm)</option>
+                    <option value="5000">Oddiy Pereplyot</option>
+                    <option value="10000">Temir pereplyot</option>
+                    <option value="10000">Termokley</option>
+                    <option value="30000">Qattiq muqova</option>
 
                 </select>
             </div>
@@ -53,8 +53,9 @@
             <br>
             <br>
             <br>
-            <h1 id="narx" style="font-size: 24px;">
-                Narx: 0 so'm
+             <h1 style="font-size: 14px;">Narx:</h1>
+            <h1 id="narx" style="font-size: 14px;">
+                 0 so'm
             </h1>
 
 
@@ -71,12 +72,12 @@
         let narxH1 = document.getElementById("narx");
         
         if (kitobBetlarSoni != "") {
-            narxH1.innerHTML = `<h1 id="narx" style="font-size: 24px;"">
-                Narx:${kitobBetlarSoni}x${qogoz}+${jild}= ${parseInt(kitobBetlarSoni * qogoz) + parseInt(jild)} so'm
+            narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px;"">
+                ${kitobBetlarSoni}x${qogoz}+${jild}= ${parseInt(kitobBetlarSoni * qogoz) + parseInt(jild)} so'm
             </h1>`;
         } else {
-            narxH1.innerHTML = ` <h1 id="narx" style="font-size: 24px;"">
-                Narx: 0 so'm
+            narxH1.innerHTML = ` <h1 id="narx" style="font-size: 14px;"">
+                0 so'm
             </h1>`;
         }
 
