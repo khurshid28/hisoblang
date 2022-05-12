@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrintZone</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>&bull; Hisoblang &bull;</h1>
+        <div class="underline">
+        </div>
+
+        <form action="#" id="contact_form" onchange="hisoblash()">
+
+            <div class="telephone2">
+                <input type="number" placeholder="Kitob Betlarining Sonini kiriting..." name="telephone"
+                    id="telephone_input" onchange="hisoblash()" autocomplete="off" onclick="hisoblash()">
+            </div>
+
+            <div class="subject">
+
+                <select  name="subject" id="subject_input" class="qogoz">
+                    <!-- <option disabled hidden selected>Subject line</option> -->
+                    <option value="90">A5 - oq qora (90 so'm)</option>
+                    <option value="160">A4 - oq qora (160 so'm)</option>
+                    <option value="130">A5 - rangli (130 so'm)</option>
+                    <option value="200">A4 - rangli (200 so'm)</option>
+                </select>
+            </div>
+            <div class="subject">
+
+                <select name="subject" id="subject_input" class="jild">
+                    <option value="5000">Oddiy Pereplyot (5.000 so'm)</option>
+                    <option value="10000">Temir pereplyot (10.000 so'm)</option>
+                    <option value="10000">Termokley (10.000 so'm)</option>
+                    <option value="30000">Qattiq muqova (30.000 so'm)</option>
+
+                </select>
+            </div>
+
+            <!-- <div class="message">
+                <label for="message"></label>
+                <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5"
+                    required></textarea>
+            </div> -->
+            - A5 kitobcha <br>
+            - A4 katta
+            <br>
+            <br>
+            <br>
+            <h1 id="narx" style="font-size: 24px;">
+                Narx: 0 so'm
+            </h1>
+
+
+        </form><!-- // End form -->
+    </div><!-- // End #container -->
+</body>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    function hisoblash() {
+        console.log("ishladi")
+        let kitobBetlarSoni= document.getElementById("telephone_input").value ;
+        let qogoz=  document.querySelector(".qogoz").value; 
+        let jild=document.querySelector(".jild").value 
+        let narxH1 = document.getElementById("narx");
+        
+        if (kitobBetlarSoni != "") {
+            narxH1.innerHTML = `<h1 id="narx" style="font-size: 24px;"">
+                Narx:${kitobBetlarSoni}x${qogoz}+${jild}= ${parseInt(kitobBetlarSoni * qogoz) + parseInt(jild)} so'm
+            </h1>`;
+        } else {
+            narxH1.innerHTML = ` <h1 id="narx" style="font-size: 24px;"">
+                Narx: 0 so'm
+            </h1>`;
+        }
+
+    }
+</script>
+
+</html>
