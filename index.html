@@ -26,19 +26,18 @@
 
                 <select  name="subject" id="subject_input" class="qogoz">
                     <!-- <option disabled hidden selected>Subject line</option> -->
-                    <option value="90">A5 - oq qora</option>
-                    <option value="160">A4 - oq qora</option>
-                    <option value="130">A5 - rangli</option>
-                    <option value="200">A4 - rangli</option>
+                    <option value="1">A5 - oq qora</option>
+                    <option value="2">A4 - oq qora</option>
+                    <option value="3">A5 - rangli</option>
+                    <option value="4">A4 - rangli</option>
                 </select>
             </div>
             <div class="subject">
-
                 <select name="subject" id="subject_input" class="jild">
-                    <option value="5000">Oddiy Pereplyot</option>
-                    <option value="10000">Temir pereplyot</option>
-                    <option value="10000">Termokley</option>
-                    <option value="30000">Qattiq muqova</option>
+                    <option value="6000">Oddiy Pereplyot</option>
+                    <option value="8000">Temir Pereplyot</option>
+                    <option value="10000">Kley (Termokley)</option>
+                    <option value="28000">Qattiq muqova</option>
 
                 </select>
             </div>
@@ -71,9 +70,94 @@
         let jild=document.querySelector(".jild").value 
         let narxH1 = document.getElementById("narx");
         
+        let qogozNarx=0;
+
+        if (parseInt(kitobBetlarSoni)>499) {
+
+          switch (parseInt(qogoz)) {
+            case 1:
+                qogozNarx=60;
+                break;
+            case 2:
+                qogozNarx=120;
+                break;
+            case 3:
+                qogozNarx=100;
+                break;
+            case 4:
+                qogozNarx=200;
+                break;
+          
+            
+          }
+          
+
+            
+        } else if(parseInt(kitobBetlarSoni)>99){
+
+            switch (parseInt(qogoz)) {
+            case 1:
+                qogozNarx=70;
+                break;
+            case 2:
+                qogozNarx=140;
+                break;
+            case 3:
+                qogozNarx=120;
+                break;
+            case 4:
+                qogozNarx=230;
+                break;
+          
+            
+          }
+
+        }
+        else if(parseInt(kitobBetlarSoni)>29){
+            switch (parseInt(qogoz)) {
+            case 1:
+                qogozNarx=100;
+                break;
+            case 2:
+                qogozNarx=200;
+                break;
+            case 3:
+                qogozNarx=200;
+                break;
+            case 4:
+                qogozNarx=400;
+                break;
+          
+            
+          }
+        }
+        
+        else {
+            switch (parseInt(qogoz)) {
+            case 1:
+                qogozNarx=150;
+                break;
+            case 2:
+                qogozNarx=300;
+                break;
+            case 3:
+                qogozNarx=300;
+                break;
+            case 4:
+                qogozNarx=600;
+                break;
+          
+            
+          }
+            
+        }
+       
+
+
+
         if (kitobBetlarSoni != "") {
             narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px;"">
-                ${kitobBetlarSoni}x${qogoz}+${jild}= ${parseInt(kitobBetlarSoni * qogoz) + parseInt(jild)} so'm
+                ${kitobBetlarSoni}x${qogozNarx}+${jild}= ${parseInt(kitobBetlarSoni * qogozNarx) + parseInt(jild)} so'm
             </h1>`;
         } else {
             narxH1.innerHTML = ` <h1 id="narx" style="font-size: 14px;"">
@@ -85,3 +169,5 @@
 </script>
 
 </html>
+
+
