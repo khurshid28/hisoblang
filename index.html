@@ -25,7 +25,7 @@
             <div class="subject">
 
                 <select  name="subject" id="subject_input" class="qogoz">
-                    <!-- <option disabled hidden selected>Subject line</option> -->
+                    
                     <option value="1">A5 - oq qora</option>
                     <option value="2">A4 - oq qora</option>
                     <option value="3">A5 - rangli</option>
@@ -42,11 +42,7 @@
                 </select>
             </div>
 
-            <!-- <div class="message">
-                <label for="message"></label>
-                <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5"
-                    required></textarea>
-            </div> -->
+           
             - A5 kitobcha <br>
             - A4 katta
             <br>
@@ -58,8 +54,8 @@
             </h1>
 
 
-        </form><!-- // End form -->
-    </div><!-- // End #container -->
+        </form>
+    </div>
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
@@ -149,6 +145,7 @@
           
             
           }
+
             
         }
        
@@ -157,7 +154,7 @@
 
         if (kitobBetlarSoni != "") {
             narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px;"">
-                ${kitobBetlarSoni}x${qogozNarx}+${jild}= ${parseInt(kitobBetlarSoni * qogozNarx) + parseInt(jild)} so'm
+                ${kitobBetlarSoni}x${qogozNarx}+${parseInt(jild * kitobBetlarSoni / 200)}= ${parseInt(kitobBetlarSoni * qogozNarx + parseInt(jild * kitobBetlarSoni / 200)) } so'm
             </h1>`;
         } else {
             narxH1.innerHTML = ` <h1 id="narx" style="font-size: 14px;"">
