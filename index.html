@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 
-<body>
+<body style="
+background-image: url('https://w-dog.ru/wallpapers/15/14/426101354778559/fon-zelenyj-cvet-siyanie.jpg'); 
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size: cover;
+">
     <div id="container">
-        <h1 style="font-size: 21px;">&bull; Print Zone &bull;</h1>
+        <h1 style="font-size: 21px; color: #fff; font-weight: 900;">&bull; Print Zone &bull;</h1>
         <div class="underline">
         </div>
 
@@ -33,7 +38,10 @@
                 </select>
             </div>
             <div class="subject">
-                <select name="subject" id="subject_input" class="jild">
+                <select name="subject" id="subject_input" class="jild" 
+               
+
+                >
                     <option value="6000">Oddiy Pereplyot</option>
                     <option value="8000">Temir Pereplyot</option>
                     <option value="10000">Kley (Termokley)</option>
@@ -43,19 +51,29 @@
             </div>
 
            
-            - A5 kitobcha <br>
-            - A4 katta
+            <p style="color: #fff; font-weight: 600;"> - A5 kitobcha </p>
+            
+             <p style="color: #fff; font-weight: 600;"> - A4 katta </p>
+            
             <br>
             <br>
             <br>
-             <h1 style="font-size: 14px;">Narx:</h1>
-            <h1 id="narx" style="font-size: 14px;">
+             <h1 style="font-size: 14px; color: #fff; font-weight: 600;">Narx:</h1>
+            <h1 id="narx" style="font-size: 14px; color:  #fff;font-weight: 600">
                  0 so'm
             </h1>
 
 
         </form>
     </div>
+  <center>
+    <u style="color: #fff">
+        <p style="color: #fff;font-weight: 500;font-size: 17px;height: 30px;line-height: 30px;  ">
+        (Kurs ishi) Oddiy list 1000 so'mdan
+    </p>
+</u>
+  </center>
+   
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
@@ -153,11 +171,11 @@
 
 
         if (kitobBetlarSoni != "") {
-            narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px;"">
+            narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
                 ${kitobBetlarSoni}x${qogozNarx}+${parseInt(jild * kitobBetlarSoni / 200)}= ${parseInt(kitobBetlarSoni * qogozNarx + parseInt(jild * kitobBetlarSoni / 200)) } so'm
             </h1>`;
         } else {
-            narxH1.innerHTML = ` <h1 id="narx" style="font-size: 14px;"">
+            narxH1.innerHTML = ` <h1 id="narx" style="font-size: 14px; color:#fff;font-weight: 600 ">
                 0 so'm
             </h1>`;
         }
