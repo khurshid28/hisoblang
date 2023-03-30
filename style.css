@@ -37,7 +37,7 @@ textarea {
   max-width: 768px;
   margin:   100px auto;
  
-  position: relative;
+  /* position: relative; */
   padding-bottom: 30px;
 }
 
@@ -205,7 +205,7 @@ textarea {
   }
   #container {
     margin: 20px auto;
-    width: 80%;
+    width: 90%;
   }
 }
 
@@ -228,6 +228,6 @@ textarea {
   }
   #container {
     margin: 20px auto;
-    width: 80%;
+    width: 90%;
   }
 }
