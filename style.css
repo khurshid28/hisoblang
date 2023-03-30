@@ -43,7 +43,10 @@ textarea {
 
 form {
   padding: 17.5px;
-  margin: 70px 0px;
+  margin-top: 5px;
+  margin-bottom: 55px;
+  margin-right: 50px;
+  margin-left: 50px;
 }
 
 h1 {
