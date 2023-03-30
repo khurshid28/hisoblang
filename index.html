@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PrintZone</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 </head>
 
 <body style="
@@ -25,14 +28,14 @@ background-size: cover;
         <form action="" id="contact_form" onchange="hisoblash()" autocomplete="off">
 
             <div class="telephone2">
-                <input type="number" placeholder="Betlarining Soni..." name="telephone"
-                    id="telephone_input" onchange="hisoblash" autocomplete="off" onclick="hisoblash()">
+                <input type="number" placeholder="Betlarining Soni..." name="telephone" id="telephone_input"
+                    onchange="hisoblash" autocomplete="on" onclick="hisoblash()">
             </div>
 
             <div class="subject">
 
-                <select  name="subject" id="subject_input" class="qogoz">
-                    
+                <select name="subject" id="subject_input" class="qogoz">
+
                     <option value="1">A5 - oq qora</option>
                     <option value="2">A4 - oq qora</option>
                     <option value="3">A5 - rangli</option>
@@ -40,10 +43,7 @@ background-size: cover;
                 </select>
             </div>
             <div class="subject">
-                <select name="subject" id="subject_input" class="jild" 
-               
-
-                >
+                <select name="subject" id="subject_input" class="jild">
                     <option value="6000">Oddiy Pereplyot</option>
                     <option value="8000">Temir Pereplyot</option>
                     <option value="10000">Kley (Termokley)</option>
@@ -52,131 +52,201 @@ background-size: cover;
                 </select>
             </div>
 
-           
+
             <p style="color: #fff; font-weight: 600;"> - A5 kitobcha </p>
+
+            <p style="color: #fff; font-weight: 600;"> - A4 katta </p>
+
+            <br>
+            <br>
             
-             <p style="color: #fff; font-weight: 600;"> - A4 katta </p>
-            
-            <br>
-            <br>
-            <br>
-             <h1 style="font-size: 14px; color: #fff; font-weight: 600;">Narx:</h1>
+            <h1 style="font-size: 14px; color: #fff; font-weight: 600;">Narx:</h1>
             <h1 id="narx" style="font-size: 14px; color:  #fff;font-weight: 600">
-                 0 so'm
+                0 so'm
             </h1>
+            <br />
+            
+
+          <hr>
 
 
+          
+
+            <!-- <center>
+                <i class="fa fa-telegram" style="font-size:68px;color:#229ED9"></i>
+            </center> -->
+            <center>
+                <!-- <u style="color: #fff"> -->
+                <p style="color: #fff;font-weight: 500;font-size: 17px;height: 30px;line-height: 30px;  ">
+                    ko’proq buyurtma uchun </i>  <a href="https://t.me/book_press/" style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram" style="font-size:24px;color:#229ED9"> </i>    @book_press</a>  <br>
+                    arzon narxlar - </i> <a href="https://t.me/printfaster/" style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram" style="font-size:24px;color:#229ED9">  </i>     @printfaster</a>  <br>
+                    ______________________<br>
+                    batafsil - </i>  <a href="https://t.me/printzone/" style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram" style="font-size:24px;color:#229ED9">  </i>     @printzone</a><br>
+                    asoschi -<a href="tel:88-301-01-00"  style="color: #229ED9; text-decoration: none;"><i class="fa fa-phone" style="font-size:24px;color:#229ED9"></i>   88 301-01-00</a> <br>
+                </p>
+        
+            </center>
         </form>
+        
     </div>
-  <center>
-    <u style="color: #fff">
+    <center>
+        <!-- <u style="color: #fff"> -->
         <p style="color: #fff;font-weight: 500;font-size: 17px;height: 30px;line-height: 30px;  ">
-        (Kurs ishi) Oddiy list 1000 so'mdan
-    </p>
-</u>
-  </center>
-   
+            Boshqa xizmatlar kelishilgan narxlarda
+        </p>
+        <!-- </u> -->
+    </center>
+  
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
     function hisoblash() {
         console.log("ishladi")
-        let kitobBetlarSoni= document.getElementById("telephone_input").value ;
-        let qogoz=  document.querySelector(".qogoz").value; 
-        let jild=document.querySelector(".jild").value 
+        let kitobBetlarSoni = document.getElementById("telephone_input").value;
+        let qogoz = document.querySelector(".qogoz").value;
+        let jild = document.querySelector(".jild").value
         let narxH1 = document.getElementById("narx");
-        
-        let qogozNarx=0;
 
-        if (parseInt(kitobBetlarSoni)>499) {
+        let qogozNarx = 0;
 
-          switch (parseInt(qogoz)) {
-            case 1:
-                qogozNarx=75;
-                break;
-            case 2:
-                qogozNarx=120;
-                break;
-            case 3:
-                qogozNarx=100;
-                break;
-            case 4:
-                qogozNarx=200;
-                break;
-          
-            
-          }
-          
-
-            
-        } else if(parseInt(kitobBetlarSoni)>99){
+        if (parseInt(kitobBetlarSoni) > 499) {
 
             switch (parseInt(qogoz)) {
-            case 1:
-                qogozNarx=70;
-                break;
-            case 2:
-                qogozNarx=140;
-                break;
-            case 3:
-                qogozNarx=120;
-                break;
-            case 4:
-                qogozNarx=230;
-                break;
-          
-            
-          }
+                case 1:
+                    qogozNarx = 65;
+                    break;
+                case 2:
+
+                    qogozNarx = 120;
+                    break;
+                case 3:
+                    qogozNarx = 80;
+                    break;
+                case 4:
+                    qogozNarx = 160;
+                    break;
+            }
+
+
+
+        } else if (parseInt(kitobBetlarSoni) > 199) {
+
+
+            switch (parseInt(qogoz)) {
+                case 1:
+                    qogozNarx = 80;
+                    break;
+                case 2:
+
+                    qogozNarx = 160;
+                    break;
+                case 3:
+                    qogozNarx = 100;
+                    break;
+                case 4:
+                    qogozNarx = 190;
+                    break;
+            }
+
 
         }
-        else if(parseInt(kitobBetlarSoni)>29){
+
+        else if (parseInt(kitobBetlarSoni) > 99) {
+
+
             switch (parseInt(qogoz)) {
-            case 1:
-                qogozNarx=100;
-                break;
-            case 2:
-                qogozNarx=200;
-                break;
-            case 3:
-                qogozNarx=200;
-                break;
-            case 4:
-                qogozNarx=400;
-                break;
-          
-            
-          }
+                case 1:
+                    qogozNarx = 150;
+                    break;
+                case 2:
+
+                    qogozNarx = 200;
+                    break;
+                case 3:
+                    qogozNarx = 200;
+                    break;
+                case 4:
+                    qogozNarx = 300;
+                    break;
+            }
+
+            // switch (parseInt(qogoz)) {
+            //     case 1:
+            //         qogozNarx = 70;
+            //         break;
+            //     case 2:
+            //         qogozNarx = 140;
+            //         break;
+            //     case 3:
+            //         qogozNarx = 120;
+            //         break;
+            //     case 4:
+            //         qogozNarx = 230;
+            //         break;
+
+
+            // }
+
         }
-        
+        // else if (parseInt(kitobBetlarSoni) > 29) {
+        //     switch (parseInt(qogoz)) {
+        //         case 1:
+        //             qogozNarx = 100;
+        //             break;
+        //         case 2:
+        //             qogozNarx = 200;
+        //             break;
+        //         case 3:
+        //             qogozNarx = 200;
+        //             break;
+        //         case 4:
+        //             qogozNarx = 400;
+        //             break;
+
+
+        //     }
+        // }
+
         else {
             switch (parseInt(qogoz)) {
-            case 1:
-                qogozNarx=150;
-                break;
-            case 2:
-                qogozNarx=300;
-                break;
-            case 3:
-                qogozNarx=300;
-                break;
-            case 4:
-                qogozNarx=600;
-                break;
-          
-            
-          }
+                case 1:
+                    qogozNarx = 400;
+                    break;
+                case 2:
+                    qogozNarx = 600;
+                    break;
+                case 3:
 
-            
+
+                    qogozNarx = 400;
+                    break;
+                case 4:
+                    qogozNarx = 600;
+                    break;
+
+
+            }
+
+
         }
-       
+
 
 
 
         if (kitobBetlarSoni != "") {
-            narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
-                ${kitobBetlarSoni}x${qogozNarx}+${parseInt(jild * kitobBetlarSoni / 200)}= ${parseInt(kitobBetlarSoni * qogozNarx + parseInt(jild * kitobBetlarSoni / 200)) } so'm
+            if (parseInt(kitobBetlarSoni) < 100) {
+                narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
+                ${kitobBetlarSoni}x${qogozNarx} = ${parseInt(kitobBetlarSoni * qogozNarx)} so'm (Preplyotsiz)
             </h1>`;
-        } else {
+            } else {
+                narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
+                ${kitobBetlarSoni}x${qogozNarx}+${Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild)}= ${parseInt(kitobBetlarSoni * qogozNarx + Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild))} so'm
+            </h1>`;
+            }
+
+        }
+
+        else {
             narxH1.innerHTML = ` <h1 id="narx" style="font-size: 14px; color:#fff;font-weight: 600 ">
                 0 so'm
             </h1>`;
@@ -186,5 +256,3 @@ background-size: cover;
 </script>
 
 </html>
-
-
