@@ -318,30 +318,41 @@ function hisoblash() {
         // pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
         var file = event.target.files[0]
+        
+        // application/pdf
         console.log(file)
-        fileChosen.textContent = file.name
+        console.log("++++++++===")
+        console.log(file.type)
+        if (file.type =="application/pdf") {
+            fileChosen.textContent = file.name
 
         var reader = new FileReader();
         // reader.readAsBinaryString(this.files[0]);
         reader.onloadend = async () =>{
-            console.log(">>>> 1")
-            console.log(this.result)
+            // console.log(">>>> 1")
+            // console.log(this.result)
             var typeArray = new Uint8Array(await readFile(file))
 
             const task = pdfjsLib.getDocument(typeArray)
-            console.log(">>>> 2")
-            console.log(typeArray)
-            console.log(task.promise)
+            // console.log(">>>> 2")
+            // console.log(typeArray)
+            // console.log(task.promise)
 
             task.promise.then((pdf) => {
-                console.log(pdf.numPages)
+                // console.log(pdf.numPages)
                 document.getElementById('telephone_input').value = pdf.numPages
                 hisoblash()
             })
 
 
         }
-        await reader.readAsBinaryString(file)
+           await reader.readAsBinaryString(file)
+        }else{
+            fileChosen.textContent = ""
+            document.getElementById('telephone_input').value = ""
+        }
+       
+        
     };
 
 
