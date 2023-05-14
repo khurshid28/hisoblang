@@ -124,6 +124,30 @@ background-size: cover;
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
 
+<<<<<<< HEAD
+=======
+    const actualBtn = document.getElementById('actual-btn');
+
+    const fileChosen = document.getElementById('file-chosen');
+
+    actualBtn.addEventListener('change', function () {
+        fileChosen.textContent = this.files[0].name
+        var reader = new FileReader();
+        reader.readAsBinaryString(this.files[0]);
+        reader.onloadend = function () {
+            var count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            console.log('Number of Pages:', count);
+            document.getElementById('telephone_input').value =count
+            hisoblash()
+        }
+    })
+
+  function toMoneyStyle(value){
+    return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".")[0].replaceAll(","," ");
+  }
+
+
+>>>>>>> 5ed485cd47f1c195bb9d434b20fcf371532f0c17
     function hisoblash() {
         console.log("ishladi")
         let kitobBetlarSoni = document.getElementById("telephone_input").value;
@@ -260,11 +284,11 @@ background-size: cover;
         if (kitobBetlarSoni != "") {
             if (parseInt(kitobBetlarSoni) < 100) {
                 narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
-                ${kitobBetlarSoni}x${qogozNarx} = ${parseInt(kitobBetlarSoni * qogozNarx)} so'm (Preplyotsiz)
+                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)} = ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx))} so'm (Preplyotsiz)
             </h1>`;
             } else {
                 narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
-                ${kitobBetlarSoni}x${qogozNarx}+${Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild)}= ${parseInt(kitobBetlarSoni * qogozNarx + Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild))} so'm
+                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)}+${toMoneyStyle(Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild))}= ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx + Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild)))} so'm
             </h1>`;
             }
 
