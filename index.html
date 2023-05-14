@@ -26,10 +26,21 @@ background-size: cover;
         </div>
 
         <form action="" id="contact_form" onchange="hisoblash()" autocomplete="off">
+            <input type="file" id="actual-btn" accept="application/pdf" hidden />
+
+            <!-- our custom upload button -->
+            <label for="actual-btn">Choose File</label>
+
+            <!-- name of file chosen -->
+            <span id="file-chosen"
+                style="color: #fff;font-weight: 500;font-size: 12px;height: 20px;line-height: 20px;  "></span>
+            <br>
+            <br>
 
             <div class="telephone2">
                 <input type="number" placeholder="Betlarining Soni..." name="telephone" id="telephone_input"
                     onchange="hisoblash" autocomplete="on" onclick="hisoblash()">
+
             </div>
 
             <div class="subject">
@@ -59,18 +70,20 @@ background-size: cover;
 
             <br>
             <br>
-            
+
             <h1 style="font-size: 14px; color: #fff; font-weight: 600;">Narx:</h1>
             <h1 id="narx" style="font-size: 14px; color:  #fff;font-weight: 600">
                 0 so'm
             </h1>
             <br />
-            
-
-          <hr>
 
 
-          
+            <hr>
+
+
+            <br>
+
+            <!-- actual upload which is hidden -->
 
             <!-- <center>
                 <i class="fa fa-telegram" style="font-size:68px;color:#229ED9"></i>
@@ -78,16 +91,23 @@ background-size: cover;
             <center>
                 <!-- <u style="color: #fff"> -->
                 <p style="color: #fff;font-weight: 500;font-size: 12px;height: 20px;line-height: 20px;  ">
-                    ko’proq buyurtma uchun </i>  <a href="https://t.me/book_press/" style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram" style="font-size:24px;color:#229ED9"> </i>    @book_press</a>  <br>
-                    arzon narxlar - </i> <a href="https://t.me/printfaster/" style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram" style="font-size:24px;color:#229ED9">  </i>     @printfaster</a>  <br>
+                    ko’proq buyurtma uchun </i> <a href="https://t.me/book_press/"
+                        style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram"
+                            style="font-size:24px;color:#229ED9"> </i> @book_press</a> <br>
+                    arzon narxlar - </i> <a href="https://t.me/printfaster/"
+                        style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram"
+                            style="font-size:24px;color:#229ED9"> </i> @printfaster</a> <br>
                     ______________________<br>
-                    batafsil - </i>  <a href="https://t.me/printzone/" style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram" style="font-size:24px;color:#229ED9">  </i>     @printzone</a>     /    <a href="tel:88-301-01-00"  style="color: #229ED9; text-decoration: none;"><i class="fa fa-phone" style="font-size:24px;color:#229ED9"></i>   88 301-01-00</a><br>
-                    
+                    batafsil - </i> <a href="https://t.me/printzone/" style="color: #229ED9; text-decoration: none;"><i
+                            class="fa fa-telegram" style="font-size:24px;color:#229ED9"> </i> @printzone</a> / <a
+                        href="tel:88-301-01-00" style="color: #229ED9; text-decoration: none;"><i class="fa fa-phone"
+                            style="font-size:24px;color:#229ED9"></i> 88 301-01-00</a><br>
+
                 </p>
-        
+
             </center>
         </form>
-        
+
     </div>
     <center>
         <!-- <u style="color: #fff"> -->
@@ -96,10 +116,29 @@ background-size: cover;
         </p>
         <!-- </u> -->
     </center>
-  
+
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
+
+    const actualBtn = document.getElementById('actual-btn');
+
+    const fileChosen = document.getElementById('file-chosen');
+
+    actualBtn.addEventListener('change', function () {
+        fileChosen.textContent = this.files[0].name
+        var reader = new FileReader();
+        reader.readAsBinaryString(this.files[0]);
+        reader.onloadend = function () {
+            var count = reader.result.match(/\/Type[\s]*\/Page[^s]/g).length;
+            console.log('Number of Pages:', count);
+            document.getElementById('telephone_input').value =count
+        }
+    })
+
+
+
+
     function hisoblash() {
         console.log("ishladi")
         let kitobBetlarSoni = document.getElementById("telephone_input").value;
