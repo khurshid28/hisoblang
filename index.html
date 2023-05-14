@@ -325,6 +325,7 @@ function hisoblash() {
             task.promise.then((pdf) => {
                 console.log(pdf.numPages)
                 document.getElementById('telephone_input').value = pdf.numPages
+                hisoblash()
             })
 
 
