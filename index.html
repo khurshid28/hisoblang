@@ -123,7 +123,18 @@ background-size: cover;
     integrity="sha512-Z8CqofpIcnJN80feS2uccz+pXWgZzeKxDsDNMD/dJ6997/LSRY+W4NmEt9acwR+Gt9OHN0kkI1CTianCwoqcjQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
+const form = document.querySelector('form');
+form.addEventListener('change', function() {
+    hisoblash()
+});
 
+var telephone_input = document.getElementById('telephone_input');
+
+//Attach the event listener to the element
+telephone_input.oninput = (event) => {
+
+    hisoblash()
+};
 
 function toMoneyStyle(value){
     return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".")[0].replaceAll(","," ");
