@@ -137,7 +137,9 @@ background-size: cover;
         }
     })
 
-
+  function toMoneyStyle(value){
+    return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".")[0].replaceAll(","," ");
+  }
 
 
     function hisoblash() {
@@ -276,11 +278,11 @@ background-size: cover;
         if (kitobBetlarSoni != "") {
             if (parseInt(kitobBetlarSoni) < 100) {
                 narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
-                ${kitobBetlarSoni}x${qogozNarx} = ${parseInt(kitobBetlarSoni * qogozNarx)} so'm (Preplyotsiz)
+                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)} = ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx))} so'm (Preplyotsiz)
             </h1>`;
             } else {
                 narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
-                ${kitobBetlarSoni}x${qogozNarx}+${Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild)}= ${parseInt(kitobBetlarSoni * qogozNarx + Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild))} so'm
+                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)}+${toMoneyStyle(Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild))}= ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx + Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild)))} so'm
             </h1>`;
             }
 
