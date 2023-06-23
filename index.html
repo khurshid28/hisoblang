@@ -312,7 +312,7 @@ background-size: cover;
             </h1>`;
             } else {
                 narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; color: #fff;font-weight: 600" >
-                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)}+${toMoneyStyle(  parseInt(jild))}= ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx + Math.floor((kitobBetlarSoni - 1) / 100) * 1000 + parseInt(jild)))} so'm
+                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)}+${toMoneyStyle( parseInt(jild))}= ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx + Math.floor(parseInt(jild))))} so'm
             </h1>`;
             // Math.floor((kitobBetlarSoni - 1) / 100) * 1000
             }
