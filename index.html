@@ -55,10 +55,10 @@ background-size: cover;
             </div>
             <div class="subject">
                 <select name="subject" id="subject_input" class="jild">
-                    <option value="6000">Oddiy Pereplyot</option>
-                    <option value="8000">Temir Pereplyot</option>
-                    <option value="10000">Kley (Termokley)</option>
-                    <option value="28000">Qattiq muqova</option>
+                    <option value="1">Oddiy Pereplyot</option>
+                    <option value="2">Temir Pereplyot</option>
+                    <option value="3">Kley (Termokley)</option>
+                    <option value="4">Qattiq muqova</option>
 
                 </select>
             </div>
@@ -91,13 +91,13 @@ background-size: cover;
             <center>
                 <!-- <u style="color: #fff"> -->
                 <p style="color: #fff;font-weight: 500;font-size: 12px;height: 20px;line-height: 20px;  ">
-<!--                     ko’proq buyurtma uchun </i> <a href="https://t.me/book_press/"
+                    <!--                     ko’proq buyurtma uchun </i> <a href="https://t.me/book_press/"
                         style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram"
                             style="font-size:24px;color:#229ED9"> </i> @book_press</a> <br> -->
                     arzon narxlar - </i> <a href="https://t.me/printfaster/"
                         style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram"
                             style="font-size:24px;color:#229ED9"> </i> @printfaster</a> <br>
-                    
+
                     batafsil - </i> <a href="https://t.me/printzone/" style="color: #229ED9; text-decoration: none;"><i
                             class="fa fa-telegram" style="font-size:24px;color:#229ED9"> </i> @printzone</a> / <a
                         href="tel:88-301-01-00" style="color: #229ED9; text-decoration: none;"><i class="fa fa-phone"
@@ -123,89 +123,121 @@ background-size: cover;
     integrity="sha512-Z8CqofpIcnJN80feS2uccz+pXWgZzeKxDsDNMD/dJ6997/LSRY+W4NmEt9acwR+Gt9OHN0kkI1CTianCwoqcjQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-const form = document.querySelector('form');
-form.addEventListener('change', function() {
-    hisoblash()
-});
+    const form = document.querySelector('form');
+    form.addEventListener('change', function () {
+        hisoblash()
+    });
 
-var telephone_input = document.getElementById('telephone_input');
+    var telephone_input = document.getElementById('telephone_input');
 
-//Attach the event listener to the element
-telephone_input.oninput = (event) => {
+    //Attach the event listener to the element
+    telephone_input.oninput = (event) => {
 
-    hisoblash()
-};
+        hisoblash()
+    };
 
-function toMoneyStyle(value){
-    return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".")[0].replaceAll(","," ");
-  }
-function hisoblash() {
+    function toMoneyStyle(value) {
+        return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".")[0].replaceAll(",", " ");
+    }
+    function hisoblash() {
         console.log("ishladi")
         let kitobBetlarSoni = document.getElementById("telephone_input").value;
         let qogoz = document.querySelector(".qogoz").value;
         let jild = document.querySelector(".jild").value
+
+
+
+
+
+        if (jild == 1 || jild == 2 || jild == 3) {
+            if (kitobBetlarSoni < 300) {
+                jild = 10000;
+            } else if (kitobBetlarSoni < 600) {
+                jild = 18000;
+            } else if (kitobBetlarSoni < 900) {
+                jild = 27000;
+            } else {
+                jild = 35000;
+            }
+        } else if (jild == 4) {
+
+
+
+
+            if (kitobBetlarSoni < 600) {
+                jild = 30000;
+            } else if (kitobBetlarSoni < 1200) {
+                jild = 50000;
+            } else {
+                jild = 75000;
+            }
+        }
         let narxH1 = document.getElementById("narx");
 
         let qogozNarx = 0;
 
-        if (parseInt(kitobBetlarSoni) > 499) {
+        // if (parseInt(kitobBetlarSoni) > 499) {
+
+        //     switch (parseInt(qogoz)) {
+        //         case 1:
+        //             qogozNarx = 65;
+        //             break;
+        //         case 2:
+
+        //             qogozNarx = 120;
+        //             break;
+        //         case 3:
+        //             qogozNarx = 80;
+        //             break;
+        //         case 4:
+        //             qogozNarx = 160;
+        //             break;
+        //     }
+
+
+
+        // } 
+        // else if (parseInt(kitobBetlarSoni) > 199) {
+
+
+        //     switch (parseInt(qogoz)) {
+        //         case 1:
+        //             qogozNarx = 80;
+        //             break;
+        //         case 2:
+
+        //             qogozNarx = 160;
+        //             break;
+        //         case 3:
+        //             qogozNarx = 100;
+        //             break;
+        //         case 4:
+        //             qogozNarx = 190;
+        //             break;
+        //     }
+
+
+        // }
+
+        // else 
+        if (parseInt(kitobBetlarSoni) > 99) {
+
+
+
 
             switch (parseInt(qogoz)) {
                 case 1:
-                    qogozNarx = 65;
+                    qogozNarx = 75;
                     break;
                 case 2:
 
-                    qogozNarx = 120;
-                    break;
-                case 3:
-                    qogozNarx = 80;
-                    break;
-                case 4:
-                    qogozNarx = 160;
-                    break;
-            }
-
-
-
-        } else if (parseInt(kitobBetlarSoni) > 199) {
-
-
-            switch (parseInt(qogoz)) {
-                case 1:
-                    qogozNarx = 80;
-                    break;
-                case 2:
-
-                    qogozNarx = 160;
+                    qogozNarx = 150;
                     break;
                 case 3:
                     qogozNarx = 100;
                     break;
                 case 4:
-                    qogozNarx = 190;
-                    break;
-            }
-
-
-        }
-
-        else if (parseInt(kitobBetlarSoni) > 99) {
-
-
-            switch (parseInt(qogoz)) {
-                case 1:
-                    qogozNarx = 150;
-                    break;
-                case 2:
-
                     qogozNarx = 200;
-                    break;
-                case 3:
-                    qogozNarx = 200;
-                    break;
-                case 4:
-                    qogozNarx = 300;
                     break;
             }
 
@@ -247,20 +279,23 @@ function hisoblash() {
         // }
 
         else {
+
+
+
             switch (parseInt(qogoz)) {
                 case 1:
-                    qogozNarx = 400;
+                    qogozNarx = 100;
                     break;
                 case 2:
-                    qogozNarx = 600;
+                    qogozNarx = 200;
                     break;
                 case 3:
 
 
-                    qogozNarx = 400;
+                    qogozNarx = 150;
                     break;
                 case 4:
-                    qogozNarx = 600;
+                    qogozNarx = 300;
                     break;
 
 
@@ -294,65 +329,65 @@ function hisoblash() {
     }
 
     function readFile(file) {
-  return new Promise((resolve, reject) => {
-    // Create file reader
-    let reader = new FileReader()
+        return new Promise((resolve, reject) => {
+            // Create file reader
+            let reader = new FileReader()
 
-    // Register event listeners
-    reader.addEventListener("loadend", e => resolve(e.target.result))
-    reader.addEventListener("error", reject)
+            // Register event listeners
+            reader.addEventListener("loadend", e => resolve(e.target.result))
+            reader.addEventListener("error", reject)
 
-    // Read file
-    reader.readAsArrayBuffer(file)
-  })
-}
+            // Read file
+            reader.readAsArrayBuffer(file)
+        })
+    }
 
     const actualBtn = document.getElementById('actual-btn');
 
     const fileChosen = document.getElementById('file-chosen');
-    
-    actualBtn.onchange = async  (event) =>{
+
+    actualBtn.onchange = async (event) => {
         // let pdfjs =  import('pdfjs-dist/build/pdf');
         // let pdfjsWorker =  import('pdfjs-dist/build/pdf.worker.entry');
 
         // pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
         var file = event.target.files[0]
-        
+
         // application/pdf
         console.log(file)
         console.log("++++++++===")
         console.log(file.type)
-        if (file.type =="application/pdf") {
+        if (file.type == "application/pdf") {
             fileChosen.textContent = file.name
 
-        var reader = new FileReader();
-        // reader.readAsBinaryString(this.files[0]);
-        reader.onloadend = async () =>{
-            // console.log(">>>> 1")
-            // console.log(this.result)
-            var typeArray = new Uint8Array(await readFile(file))
+            var reader = new FileReader();
+            // reader.readAsBinaryString(this.files[0]);
+            reader.onloadend = async () => {
+                // console.log(">>>> 1")
+                // console.log(this.result)
+                var typeArray = new Uint8Array(await readFile(file))
 
-            const task = pdfjsLib.getDocument(typeArray)
-            // console.log(">>>> 2")
-            // console.log(typeArray)
-            // console.log(task.promise)
+                const task = pdfjsLib.getDocument(typeArray)
+                // console.log(">>>> 2")
+                // console.log(typeArray)
+                // console.log(task.promise)
 
-            task.promise.then((pdf) => {
-                // console.log(pdf.numPages)
-                document.getElementById('telephone_input').value = pdf.numPages
-                hisoblash()
-            })
+                task.promise.then((pdf) => {
+                    // console.log(pdf.numPages)
+                    document.getElementById('telephone_input').value = pdf.numPages
+                    hisoblash()
+                })
 
 
-        }
-           await reader.readAsBinaryString(file)
-        }else{
+            }
+            await reader.readAsBinaryString(file)
+        } else {
             fileChosen.textContent = "Pdf file yuklang"
             document.getElementById('telephone_input').value = ""
         }
-       
-        
+
+
     };
 
 
