@@ -11,38 +11,43 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 </head>
-
+<style>
+    ::placeholder {
+        color: black;
+        opacity: 1; /* Firefox */
+      }
+</style>
 <body style="
-background-image: url('https://e1.pxfuel.com/desktop-wallpaper/794/200/desktop-wallpaper-dark-winter-forest-dark-winter-high.jpg');   
+background-image: url('https://img.freepik.com/free-vector/yellow-diagonal-geometric-striped-background-with-halftone-detailed_1409-1451.jpg');   
 background-repeat: no-repeat;
 background-attachment: fixed;
 background-size: cover;">
     <div id="container">
-        <h1 style="font-size: 21px;  font-weight: 900;">&bull; Print Zone &bull;</h1>
-        <div class="underline">
+        <h1 style="font-size: 21px;  font-weight: 900;color: black;">&bull; Print Zone &bull;</h1>
+        <div class="underline" style="color: black;">
         </div>
 
         <form action="" id="contact_form" autocomplete="off">
             <input type="file" id="actual-btn" accept=".pdf" hidden />
 
             <!-- our custom upload button -->
-            <label for="actual-btn" style="background-color: rgb(226, 211, 76)">Choose File</label>
+            <label for="actual-btn" style="background-color: black">Choose File</label>
 
             <!-- name of file chosen -->
             <span id="file-chosen"
-                style="font-weight: 500;font-size: 18px;height: 20px;line-height: 20px; color: rgb(226, 211, 76)  "></span>
+                style="font-weight: 500;font-size: 18px;height: 20px;line-height: 20px; color: black  "></span>
             <br>
             <br>
 
             <div class="telephone2">
-                <input type="number" placeholder="Betlarining Soni..." name="telephone" id="telephone_input"
+                <input type="number" placeholder="Betlarining Soni..." name="telephone" id="telephone_input" style="color:black"
                     onchange="hisoblash" autocomplete="on" onclick="hisoblash">
 
             </div>
 
             <div class="subject">
 
-                <select name="subject" id="subject_input" class="qogoz">
+                <select name="subject" id="subject_input" class="qogoz" style="color:black">
 
                     <option value="1">A5 - oq qora</option>
                     <option value="2">A4 - oq qora</option>
@@ -51,7 +56,7 @@ background-size: cover;">
                 </select>
             </div>
             <div class="subject">
-                <select name="subject" id="subject_input" class="jild">
+                <select name="subject" id="subject_input" class="jild" style="color:black">
                     <option value="1">Oddiy Pereplyot</option>
                     <option value="2">Temir Pereplyot</option>
                     <option value="3">Kley (Termokley)</option>
@@ -61,42 +66,37 @@ background-size: cover;">
             </div>
 
 
-            <p style=" font-weight: 600;"> - A5 kitobcha </p>
+            <p style=" font-weight: 600; color:black"> - A5 kitobcha </p>
 
-            <p style="font-weight: 600;"> - A4 katta </p>
+            <p style="font-weight: 600; color:black"> - A4 katta </p>
 
             <br>
             <br>
 
-            <h1 style="font-size: 14px; font-weight: 600;">Narx:</h1>
-            <h1 id="narx" style="font-size: 14px;font-weight: 600">
+            <h1 style="font-size: 14px; font-weight: 600;color:black">Narx:</h1>
+            <h1 id="narx" style="font-size: 14px;font-weight: 600 ; color:black">
                 0 so'm
             </h1>
             <br />
 
 
-            <hr>
+            <hr color="black">
 
 
             <br>
 
-            <!-- actual upload which is hidden -->
+       
 
-            <!-- <center>
-                <i class="fa fa-telegram" style="font-size:68px;color:#229ED9"></i>
-            </center> -->
             <center>
-                <!-- <u style="color: #fff"> -->
-                <p style="font-weight: 500;font-size: 20px;height: 20px;line-height: 20px;  ">
+                
+                <p style="font-weight: 500;font-size: 20px;height: 20px;line-height: 20px; color:black ">
                     <!--                     ko’proq buyurtma uchun </i> <a href="https://t.me/book_press/"
                         style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram"
                             style="font-size:24px;color:#229ED9"> </i> @book_press</a> <br> -->
                     
-                    batafsil - </i> <a href="https://t.me/Printzone2/" style="color:  rgb(226, 211, 76); text-decoration: none;"><i
-                            class="fa fa-telegram" style="font-size:18px;color: rgb(226, 211, 76)"> </i> @Printzone2</a>
+                    batafsil - </i> <a href="https://t.me/Printzone2/" style="color:  black; text-decoration: none;"><i
+                            class="fa fa-telegram" style="font-size:18px;color: black"> </i> @Printzone2</a>
                     
-                           
-
                 </p>
 
             </center>
@@ -105,11 +105,11 @@ background-size: cover;">
     </div>
     <center>
         <!-- <u style="color: #fff"> -->
-        <p style="font-weight: 500;font-size: 17px;height: 30px;line-height: 30px;  ">
+        <p style="font-weight: 500;font-size: 17px;height: 30px;line-height: 30px; color:black ">
             Qattiq muqovali kitob tayyor bo'lish vaqti 5-12 kun
             <br>
         </p>
-        <!-- </u> -->
+    
     </center>
 
 </body>
