@@ -59,8 +59,9 @@ background-size: cover;">
             </div>
             <div class="subject">
                 <select name="subject" id="subject_input" class="jild" style="color:black">
-                    <option value="1">Qattiq muqova</option>
-                    <option value="2">Yumshoq muqova</option>
+                    <option value="1">Yumshoq muqova</option>
+                    <option value="2">Qattiq muqova</option>
+                  
 
                 </select>
             </div>
@@ -156,6 +157,15 @@ background-size: cover;">
         hisoblash()
     };
 
+
+    var nusxa_input = document.querySelector('.nusxa_input');
+
+    //Attach the event listener to the element
+    nusxa_input.oninput = (event) => {
+
+        hisoblash()
+    };
+
     function toMoneyStyle(value) {
         return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".")[0].replaceAll(",", " ");
     }
@@ -165,7 +175,11 @@ background-size: cover;">
         let kitobBetlarSoni = document.getElementById("telephone_input").value;
 
 
-        let nusxaSoni = document.querySelector(".nusxa_input").value ?? 1;
+        let nusxaSoni = document.querySelector(".nusxa_input").value;
+        if(!nusxaSoni){
+           nusxaSoni=1;
+        }
+
         let qogoz = document.querySelector(".qogoz").value;
         let jild = document.querySelector(".jild").value
         let jildValue=document.querySelector(".jild").value
@@ -176,10 +190,10 @@ background-size: cover;">
        
 
         switch (jild) {
-            case "1":
+            case "2":
                 jild = 25000;
                 break;
-            case "2":
+            case "1":
 
                 jild = 5500;
                 break;
@@ -200,6 +214,20 @@ background-size: cover;">
 
         switch (parseInt(jildValue)) {
             case 1:
+            switch (parseInt(qogoz)) {
+                case 1:
+                    qogozNarx = 57;
+                    break;
+                case 2:
+    
+                    qogozNarx = 110;
+                    break;
+            }
+                break;
+            case 2:
+
+               
+
                 switch (parseInt(qogoz)) {
                     case 1:
                         qogozNarx = 70;
@@ -207,18 +235,6 @@ background-size: cover;">
                     case 2:
 
                         qogozNarx = 120;
-                        break;
-                }
-                break;
-            case 2:
-
-                switch (parseInt(qogoz)) {
-                    case 1:
-                        qogozNarx = 57;
-                        break;
-                    case 2:
-        
-                        qogozNarx = 110;
                         break;
                 }
                 break;
