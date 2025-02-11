@@ -64,7 +64,11 @@ background-size: cover;">
 
                 </select>
             </div>
+           <div class="telephone2"> 
+            <input type="number" placeholder="Nusxa Soni..." name="nusxa" id="telephone_input" class="nusxa_input"
+                style="color:black" onchange="hisoblash" autocomplete="on" onclick="hisoblash">
 
+        </div>
             <center>
                 <button id="button_hisoblash" action=""
                     style="background-color: black; color:white; border-radius:8px; padding:8px 22px; font-weight: 800; font-size:20px;border:none;cursor:pointer;">Hisoblash</button>
@@ -159,9 +163,15 @@ background-size: cover;">
 
         console.log("ishladi")
         let kitobBetlarSoni = document.getElementById("telephone_input").value;
+
+
+        let nusxaSoni = document.querySelector(".nusxa_input").value ?? 1;
         let qogoz = document.querySelector(".qogoz").value;
         let jild = document.querySelector(".jild").value
         let jildValue=document.querySelector(".jild").value
+
+
+        let total = 0;
         
        
 
@@ -219,33 +229,33 @@ background-size: cover;">
 
 
 
+     
+       
 
 
+        let kitobPrice = parseInt(kitobBetlarSoni * qogozNarx + jild);
 
-
-
-
-        if(parseInt(kitobBetlarSoni) ==1){
-            qogozNarx = qogozNarx * 3;
+        if(parseInt(nusxaSoni) ==1){
+            kitobPrice =kitobPrice  * 3;
         }
 
-        else if (parseInt(kitobBetlarSoni) <= 10) {
-            qogozNarx = qogozNarx * 2;
+        else if (parseInt(nusxaSoni) <= 10) {
+            kitobPrice =kitobPrice  * 2;
         }
-        else if (parseInt(kitobBetlarSoni) <= 20) {
-            qogozNarx = qogozNarx*1.3;
+        else if (parseInt(nusxaSoni) <= 20) {
+            kitobPrice =kitobPrice  * 1.3;
         }
       
-
+        total = kitobPrice * nusxaSoni;
 
         
 
 
 
 
-        if (kitobBetlarSoni != "") {
+        if (kitobBetlarSoni != "" && nusxaSoni !="") {
             narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; font-weight: 600" >
-                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)}+${toMoneyStyle(parseInt(jild))}= ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx + jild))} so'm
+                ${nusxaSoni} x ${toMoneyStyle(kitobPrice)}= ${toMoneyStyle(total)} so'm
             </h1>`;
 
         }
