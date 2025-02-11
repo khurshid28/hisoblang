@@ -14,9 +14,11 @@
 <style>
     ::placeholder {
         color: black;
-        opacity: 1; /* Firefox */
-      }
+        opacity: 1;
+        /* Firefox */
+    }
 </style>
+
 <body style="
 background-image: url('https://img.freepik.com/free-vector/yellow-diagonal-geometric-striped-background-with-halftone-detailed_1409-1451.jpg');   
 background-repeat: no-repeat;
@@ -40,8 +42,8 @@ background-size: cover;">
             <br>
 
             <div class="telephone2">
-                <input type="number" placeholder="Betlarining Soni..." name="telephone" id="telephone_input" style="color:black"
-                    onchange="hisoblash" autocomplete="on" onclick="hisoblash">
+                <input type="number" placeholder="Betlarining Soni..." name="telephone" id="telephone_input"
+                    style="color:black" onchange="hisoblash" autocomplete="on" onclick="hisoblash">
 
             </div>
 
@@ -49,23 +51,23 @@ background-size: cover;">
 
                 <select name="subject" id="subject_input" class="qogoz" style="color:black">
 
-                    <option value="1">A5 - oq qora</option>
-                    <option value="2">A4 - oq qora</option>
-                    <option value="3">A5 - rangli</option>
-                    <option value="4">A4 - rangli</option>
+                    <option value="1">A5 qog'oz</option>
+                    <option value="2">A4 qog'oz</option>
+                  
                 </select>
             </div>
             <div class="subject">
                 <select name="subject" id="subject_input" class="jild" style="color:black">
-                    <option value="1">Oddiy Pereplyot</option>
-                    <option value="2">Temir Pereplyot</option>
-                    <option value="3">Kley (Termokley)</option>
-                    <option value="4">Qattiq muqova</option>
+                    <option value="1">Qattiq muqova</option>
+                    <option value="2">Yumshoq muqova</option>
 
                 </select>
             </div>
 
-
+            <center>
+                <button id="button_hisoblash" action=""
+                    style="background-color: black; color:white; border-radius:8px; padding:8px 22px; font-weight: 800; font-size:20px;border:none;cursor:pointer;">Hisoblash</button>
+            </center>
             <p style=" font-weight: 600; color:black"> - A5 kitobcha </p>
 
             <p style="font-weight: 600; color:black"> - A4 katta </p>
@@ -85,32 +87,44 @@ background-size: cover;">
 
             <br>
 
-       
+
 
             <center>
-                
+
                 <p style="font-weight: 500;font-size: 20px;height: 20px;line-height: 20px; color:black ">
                     <!--                     ko’proq buyurtma uchun </i> <a href="https://t.me/book_press/"
                         style="color: #229ED9; text-decoration: none;"><i class="fa fa-telegram"
                             style="font-size:24px;color:#229ED9"> </i> @book_press</a> <br> -->
-                    
+
                     batafsil - </i> <a href="https://t.me/Printzone2/" style="color:  black; text-decoration: none;"><i
                             class="fa fa-telegram" style="font-size:18px;color: black"> </i> @Printzone2</a>
+                    <br>
+
+                    <!-- <u style="color: #fff"> -->
+                <p style="font-weight: 500;font-size: 17px;height: 30px;line-height: 30px; color:black ">
+                    # Qattiq muqovali kitob tayyor bo'lish vaqti 5-12 kun
+
+                </p>
+
+
+
+                <!-- <u style="color: #fff"> -->
+                <p style="font-weight: 500;font-size: 17px;height: 30px;line-height: 30px; color:black ">
+                    # Saytdagi eng arzon narxlar faqat 20+ buyurtmalar uchun amal qiladi
                     
+                </p>
+                <p style="font-weight: 500;font-size: 17px;height: 30px;line-height: 30px; color:black ">
+                    # Oq-qora va rangli kitoblar bir xil narxlarda
+                </p>
+
+
                 </p>
 
             </center>
         </form>
 
     </div>
-    <center>
-        <!-- <u style="color: #fff"> -->
-        <p style="font-weight: 500;font-size: 17px;height: 30px;line-height: 30px; color:black ">
-            Qattiq muqovali kitob tayyor bo'lish vaqti 5-12 kun
-            <br>
-        </p>
-    
-    </center>
+
 
 </body>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
@@ -119,6 +133,11 @@ background-size: cover;">
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     const form = document.querySelector('form');
+
+    document.getElementById('button_hisoblash').addEventListener('click', function(e) {
+        e.preventDefault();
+       hisoblash();
+    });
     form.addEventListener('change', function () {
         hisoblash()
     });
@@ -134,115 +153,98 @@ background-size: cover;">
     function toMoneyStyle(value) {
         return (value).toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,').split(".")[0].replaceAll(",", " ");
     }
-    function hisoblash() {
+    function hisoblash(e) {
+
         console.log("ishladi")
         let kitobBetlarSoni = document.getElementById("telephone_input").value;
         let qogoz = document.querySelector(".qogoz").value;
         let jild = document.querySelector(".jild").value
-
-
+        let jildValue=document.querySelector(".jild").value
         
+       
+
         switch (jild) {
-                     case "1":
-                         jild = 7000;
-                         break;
-                     case "2":
-    
-                         jild = 9000;
-                         break;
-                     case "3":
-                         jild = 10000;
-                         break;
-                     case "4":
-                         jild=  28000;
-                         break;
-                         
-                 }
+            case "1":
+                jild = 25000;
+                break;
+            case "2":
+
+                jild = 5500;
+                break;
+
+        }
+
+       
 
 
-        jild = jild * (Math.floor((kitobBetlarSoni -1 ) /220) + 1);
-
+       //   jild = jild * (Math.floor((kitobBetlarSoni - 1) / 220) + 1);
+ 
         let narxH1 = document.getElementById("narx");
 
         let qogozNarx = 0;
 
-        if (parseInt(kitobBetlarSoni) > 99) {
 
 
 
+        switch (parseInt(jildValue)) {
+            case 1:
+                switch (parseInt(qogoz)) {
+                    case 1:
+                        qogozNarx = 70;
+                        break;
+                    case 2:
 
-            switch (parseInt(qogoz)) {
-                case 1:
-                    qogozNarx = 60;
-                    break;
-                case 2:
+                        qogozNarx = 120;
+                        break;
+                }
+                break;
+            case 2:
 
-                    qogozNarx = 119;
-                    break;
-                case 3:
-                    qogozNarx = 70;
-                    break;
-                case 4:
-                    qogozNarx = 119;
-                    break;
-            }
-
-
-
-            
-
-            // switch (parseInt(qogoz)) {
-            //     case 1:
-            //         qogozNarx = 70;
-            //         break;
-            //     case 2:
-            //         qogozNarx = 140;
-            //         break;
-            //     case 3:
-            //         qogozNarx = 120;
-            //         break;
-            //     case 4:
-            //         qogozNarx = 230;
-            //         break;
-
-
-            // }
-
+                switch (parseInt(qogoz)) {
+                    case 1:
+                        qogozNarx = 57;
+                        break;
+                    case 2:
+        
+                        qogozNarx = 110;
+                        break;
+                }
+                break;
         }
 
-        else if(parseInt(kitobBetlarSoni) > 49){
-            qogozNarx = 200;
-        }
-        else if(parseInt(kitobBetlarSoni) > 29){
-            qogozNarx = 500;
-        }
-        else if(parseInt(kitobBetlarSoni) > 4){
-            qogozNarx = 1000;
-        }
+
        
 
-        else {
 
-            qogozNarx = 2000;
 
-           
 
+
+
+
+
+
+        if(parseInt(kitobBetlarSoni) ==1){
+            qogozNarx = qogozNarx * 3;
         }
+
+        else if (parseInt(kitobBetlarSoni) <= 10) {
+            qogozNarx = qogozNarx * 2;
+        }
+        else if (parseInt(kitobBetlarSoni) <= 20) {
+            qogozNarx = qogozNarx*1.3;
+        }
+      
+
+
+        
 
 
 
 
         if (kitobBetlarSoni != "") {
-            if (parseInt(kitobBetlarSoni) < 100) {
-                narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; font-weight: 600" >
-                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)} = ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx))} so'm (Preplyotsiz)
+            narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; font-weight: 600" >
+                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)}+${toMoneyStyle(parseInt(jild))}= ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx + jild))} so'm
             </h1>`;
-            } else {
-                narxH1.innerHTML = `<h1 id="narx" style="font-size: 14px; font-weight: 600" >
-                ${kitobBetlarSoni}x${toMoneyStyle(qogozNarx)}+${toMoneyStyle( parseInt(jild))}= ${toMoneyStyle(parseInt(kitobBetlarSoni * qogozNarx + jild))} so'm
-            </h1>`;
-            // Math.floor((kitobBetlarSoni - 1) / 100) * 1000
-            }
 
         }
 
@@ -282,7 +284,7 @@ background-size: cover;">
 
         // application/pdf
         console.log(file)
-        
+
         console.log(file.type)
         if (file.type == "application/pdf") {
             fileChosen.textContent = file.name

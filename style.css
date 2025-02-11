@@ -40,10 +40,11 @@ textarea {
 #container {
   border: solid 4px black;
   /* max-width: 768px; */
-  margin:   100px auto;
- 
+  margin:   20px auto;
+  width: 90%;
   /* position: relative; */
   padding-bottom: 30px;
+  
 }
 
 form {
